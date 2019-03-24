@@ -5,7 +5,7 @@ package ru.job4j.calculate;
  *
  *@author Vladimir Shataev (shayaevvova@yandex.ru)
 
-
+*/
 
 public class Calculate{
 	/**
@@ -13,5 +13,6 @@ public class Calculate{
 	 * @param args - args.
 	 */
 	public static void main(String[] args) {
-	System.out.println("Hello World");}
+	System.out.println("Hello World");
+	}
 }
