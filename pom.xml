@@ -50,7 +50,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.3</version>
 					<configuration>
-						<compilerVersionersion>1.8</compilerVersionersion>
+						<compilerVersion>1.8</compilerVersion>
 					</configuration>
 			</plugin>	
         </plugins>
