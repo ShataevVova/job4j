@@ -27,5 +27,5 @@ hs_err_pid*
 
 *.ipr
 *.iws
-
+*.ini
 target
