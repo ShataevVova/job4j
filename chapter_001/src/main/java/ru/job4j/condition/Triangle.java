@@ -55,9 +55,13 @@ public class Triangle {
      * @param a Длина от точки a b.
      * @param b Длина от точки a c.
      * @param c Длина от точки b c.
-     * @return
+     * @return должен вернуть TRUE при условии что ни а, ни b, ни с не равны нулю.
      */
     private boolean exist(double a, double c, double b) {
-        return false;
+        // Если наибольшая сторона будет меньше суммы 2х меньших сторон, то
+        // треугольник существует.
+        double res1 = (a > b) ?  a : b;
+        double res2 = (res1 > c) ? res1 : c; // нашёл самую длинную сторону.
+        return (res2 < (a + b)) || (res2 < (a + c) || (res2 < (b + c)));
     }
 }
