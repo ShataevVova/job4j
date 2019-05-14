@@ -21,12 +21,12 @@ public class ConverterTest  {
 	public void when100EuroToRubleThen1() {
 		Converter converter = new Converter();
         int result = converter.euroToRuble(100);
-		assertThat(result, is(700));
+		assertThat(result, is(7000));
 	}
 	@Test
 	public void when100DollarToRubleThen1() {
 		Converter converter = new Converter();
         int result = converter.dollarToRuble(100);
-		assertThat(result, is(600));
+		assertThat(result, is(6000));
 	}
 }
