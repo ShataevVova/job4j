@@ -21,6 +21,7 @@ public class MatrixCheck {
             System.out.println("Диагонали содержат одинаковые значения ");
         } else {
             System.out.println("Диагонали содержат разные значения ");
+            System.out.println();
         }
         return result;
     }

@@ -66,6 +66,7 @@ public class MatrixCheckTest {
     @Test
     public void whenData2x2ByTrueThenFalse() {
         MatrixCheck check = new MatrixCheck();
+
         boolean[][] input = new boolean[][] {
                 {true, true},
                 {false, true}
