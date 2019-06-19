@@ -74,7 +74,7 @@ public class Logic {
         for (int i = 0; i < table.length; i++) {
             for (int j = 0; j < table.length; j++) {
                 if (table[i][j] == 1) {
-                    countvertical++ ;
+                    countvertical++;
                 }
                 if (table[j][i] == 1) {
                     counthorizontal++;
