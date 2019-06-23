@@ -113,7 +113,7 @@ public class Tracker {
                 break;
             }
             */
-        for(int i = 0; i < position; i++) {
+        for (int i = 0; i < position; i++) {
             if (this.items[i].getId().equals(id)) {
                 result = this.items[i];
                 break;
