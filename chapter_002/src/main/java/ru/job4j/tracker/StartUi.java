@@ -62,15 +62,15 @@ public class StartUI {
                 //добавление заявки вынесено в отдельный метод.
                 this.createItem();
             } else if(ShowAll.equals(answer)) {
-                this.showAllItems(); // показать все заявки.
+                this.findAll(); // показать все заявки.
             } else if(EditItem.equals(answer)) {
-                this.editItem(); // редактирование заявки.
+                this.replace(); // редактирование заявки.
             } else if(DeleteItem.equals(answer)) {
                 this.delete();
             } else if(FindItemById.equals(answer)) {
-                this.FindById();
+                this.findById();
             } else if(FindItemByName.equals(answer)) {
-                this.FindByName();
+                this.findByName();
             } else if(EXIT.equals(answer)) {
                 exit = true;
             }
@@ -83,7 +83,7 @@ public class StartUI {
         System.out.println("---------- Добавление новой заявки : ");
         String name = this.input.ask("Введите имя заявки : ");
         String desc = this.input.ask("Введите описание заявки :");
-        Item item = new Item(name,desc);
+        Item item = new Item(name, desc);
         this.tracker.add(item);
         System.out.println("------------- Новая заявка с getId : " + item.getId() + "-----------");
     }

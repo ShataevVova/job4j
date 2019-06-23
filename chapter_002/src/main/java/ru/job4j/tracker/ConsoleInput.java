@@ -1,6 +1,10 @@
 package ru.job4j.tracker;
 import java.util.*;
 
+/**
+ * Метод для ввода пользователем позиций меню. Реализуетс метод ask интерфейса Input.
+ */
+
 public class ConsoleInput implements Input {
     private Scanner scanner = new Scanner(System.in);
     public String ask(String question){
