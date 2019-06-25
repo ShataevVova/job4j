@@ -2,15 +2,12 @@ package ru.job4j.tracker;
 import java.util.*;
 
 /**
- * Метод для ввода пользователем позиций меню. Реализуетс метод ask интерфейса Input.
+ * Реализация интерфейса ручного ввода для пользователя.
  */
-
 public class ConsoleInput implements Input {
     private Scanner scanner = new Scanner(System.in);
-    public String ask(String question){
+    public String ask(String question) {
         System.out.print(question);
         return scanner.nextLine();
     }
-
-
 }
