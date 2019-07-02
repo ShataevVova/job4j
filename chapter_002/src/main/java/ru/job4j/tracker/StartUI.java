@@ -128,7 +128,7 @@ public class StartUI {
         if (tracker.replace(id, item)) {
             System.out.println("Заявка изменена: name: " + item.getName() + " id: " + item.getId() + " desc: " + item.getDesc());
         } else {
-           System.out.println("Заявка не найдена");
+            System.out.println("Заявка не найдена");
         }
     }
 
@@ -142,8 +142,8 @@ public class StartUI {
         if (this.tracker.delete(id)) {
             System.out.println(" Заявка удалена ");
         } else {
-                System.out.println(" Заявка не найдена ");
-            }
+            System.out.println(" Заявка не найдена ");
+        }
     }
 
     /**
