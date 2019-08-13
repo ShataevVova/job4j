@@ -44,14 +44,14 @@ public class MenuTracker {
     /**
      * Метод заполняет массив.
      */
-    public void fillActions() {
+    public void fillActions(StartUI ui) {
         this.actions.add(new AddItem());
         this.actions.add(new ShowItems());
         this.actions.add(new EditItem());
         this.actions.add(new DeleteItem());
         this.actions.add(new FindItemById());
         this.actions.add(new FindItemByName());
-        this.actions.add(new ExitProgram());
+        this.actions.add(new ExitProgram(ui));
     }
 
     /**
@@ -97,7 +97,7 @@ public class MenuTracker {
 
         @Override
         public String info() {
-            return String.format("%s. %s", this.key(), "Add new Item.");
+            return String.format("%s. %s", this.key(), "Add new Item");
         }
     }
 
@@ -125,7 +125,7 @@ public class MenuTracker {
 
         @Override
         public String info() {
-            return String.format("%s. %s", this.key(), "Show all Items.");
+            return String.format("%s. %s", this.key(), "Show all Items");
         }
     }
 
@@ -152,7 +152,7 @@ public class MenuTracker {
 
         @Override
         public String info() {
-            return String.format("%s. %s", this.key(), "Edit item.");
+            return String.format("%s. %s", this.key(), "Edit item");
         }
     }
 
@@ -179,7 +179,7 @@ public class MenuTracker {
 
             @Override
             public String info() {
-                return String.format("%s. %s", this.key(), "Delete item.");
+                return String.format("%s. %s", this.key(), "Delete item");
             }
         }
 
@@ -206,7 +206,7 @@ public class MenuTracker {
 
             @Override
             public String info() {
-                return String.format("%s. %s", this.key(), "Find item by ID.");
+                return String.format("%s. %s", this.key(), "Find item by ID");
             }
         }
 
@@ -235,7 +235,7 @@ public class MenuTracker {
 
             @Override
             public String info() {
-                return String.format("%s. %s", this.key(), "Find item by Name.");
+                return String.format("%s. %s", this.key(), "Find item by Name");
             }
         }
 
@@ -243,6 +243,12 @@ public class MenuTracker {
          * Внутренний класс Выхода из программы.
          */
         private static class ExitProgram implements UserAction {
+            private final StartUI ui;
+
+            private ExitProgram(StartUI ui){
+                this.ui = ui;
+            }
+
             @Override
             public int key() {
                 return 6;
@@ -250,21 +256,13 @@ public class MenuTracker {
 
             @Override
             public void execute(Input input, Tracker tracker) {
-                System.out.println("---------- Поиск заявки по имени -----------");
-                String name = input.ask(" Введите имя заявки ");
-                Item[] item = tracker.findByName(name);
-                if (item != null) {
-                    for (int i = 0; i < item.length; i++) {
-                        System.out.println(" Заявка: " + " name: " + item[i].getName() + " desc: " + item[i].getDesc());
-                    }
-                } else {
-                    System.out.println(" Заявка не найдена: ");
-                }
+                System.out.println("---------- ВЫХОД ИЗ ПРОГРАММЫ -----------");
+                this.ui.stopRun();
             }
 
             @Override
             public String info() {
-                return String.format("%s. %s", this.key(), "Find item by Name.");
+                return String.format("%s. %s", this.key(), "Exit program");
             }
         }
     }

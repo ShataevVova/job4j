@@ -1,6 +1,8 @@
 package ru.job4j.tracker;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @version $Id$
@@ -48,6 +50,8 @@ public class StartUI {
      * @param input - ввод данных.
      * @param tracker - хранилище заявок.
      */
+    private boolean run = true;
+
     public StartUI(Input input, Tracker tracker) {
         this.input = input;
         this.tracker = tracker;
@@ -57,11 +61,18 @@ public class StartUI {
      */
     public void init() {
         MenuTracker menu = new MenuTracker(this.input, this.tracker);
-        menu.fillActions();
+        List<Integer> range = new ArrayList<>();
+        menu.fillActions(this);
+        for (int i = 0; i < menu.getActionsLength(); i++) {
+            range.add(i);
+        }
         do {
             menu.show();
-            menu.select(Integer.valueOf(input.ask("Select:")));
-        } while (!"y".equals(this.input.ask("Exit? (y): ")));
+            menu.select(input.ask("Select:", range));
+        } while (!"y".equals(this.input.ask("Exit? (y): ")) && this.run);
+    }
+    public void stopRun() {
+        this.run = false;
     }
 
        /* boolean exit = false;
@@ -214,6 +225,6 @@ public class StartUI {
      * @param args
      */
     public static void main(String[] args) {
-        new StartUI(new ConsoleInput(), new Tracker()).init();
+        new StartUI(new ValidateInput(), new Tracker()).init();
     }
 }
