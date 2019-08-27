@@ -69,9 +69,11 @@ public class StartUI {
         do {
             menu.show();
             menu.select(input.ask("Select:", range));
-        } while (!"y".equals(this.input.ask("Exit? (y): ")) && this.run);
+        } //while (!"y".equals(this.input.ask("Exit? (y): ")) && this.run);
+        while (this.run);
     }
     public void stopRun() {
+        if ("y".equals(this.input.ask("Are you shure? (y/n):")))
         this.run = false;
     }
 
